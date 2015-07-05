@@ -14,5 +14,9 @@ var ServicesSchema = new Schema({
   name: { type: String, default: '' }
 });
 
+//module.exports = mongoose.model('service', ServicesSchema, 'puneServices');
 
-module.exports = mongoose.model('Services', ServicesSchema);
+module.exports = {
+  pune: mongoose.model('service', ServicesSchema, 'puneServices'),
+  hyd: mongoose.model('service', ServicesSchema, 'hydServices')
+};

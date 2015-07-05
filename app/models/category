@@ -1,0 +1,18 @@
+
+/**
+ * Module dependencies
+ */
+
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+/**
+ * Category schema
+ */
+
+var CategoriesSchema = new Schema({
+  name: { type: String, default: '' }
+});
+
+
+module.exports = mongoose.model('categories', CategoriesSchema, 'categories');

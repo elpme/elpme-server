@@ -6,6 +6,8 @@
 var mongoose = require('mongoose');
 var dashboard = require('dashboard');
 var services = require('./../app/controllers/services');
+var categories = require('./../app/controllers/categories');
+var locations = require('./../app/controllers/locations');
 
 
 /**
@@ -16,7 +18,20 @@ module.exports = function (app, passport) {
 
   app.get('/', dashboard.index);
 
+  app.get('/getCategories', categories.getCategories);
+
   app.get('/getServices', services.getServices);
+
+  app.get('/getLocations', locations.getlocations);
+
+  //  app.post('/addService', services.addService);
+
+  app.post('/addService', function(req, res) {
+    var name = req.body.name;
+    console.log(name);
+
+  });
+
 
 
 
